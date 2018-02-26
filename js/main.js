@@ -57,7 +57,7 @@ function loadImage(imageURL) {
     document.body.style.backgroundImage = "url(" + "imageURL" + ")";
 }
 
-window.onload = load3DFile;
+window.onload = display3dModel;
 window.onload = loadImage;
 
 window.addEventListener('resize', function () {
