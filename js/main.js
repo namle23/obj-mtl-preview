@@ -33,22 +33,30 @@ function display3dModel(OBJ_PATH, OBJ_NAME, MTL_PATH, MTL_NAME) {
     document.getElementById('WebGL').appendChild(renderer.domElement);
 
     let mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setTexturePath(MTL_PATH);
-    mtlLoader.setPath(MTL_PATH);
-    mtlLoader.load(MTL_NAME, function (materials) {
+    mtlLoader.setTexturePath('./female02.mtl');
+    mtlLoader.setPath('./female02.mtl');
+    mtlLoader.load('./female02.mtl', function (materials) {
 
         materials.preload();
 
         let objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
-        objLoader.setPath(OBJ_PATH);
-        objLoader.load(OBJ_NAME, function (object) {
+        objLoader.load('./female02.obj', function (object) {
 
             scene.add(object);
             object.position.y -= 60;
 
         });
     });
+
+    // let stlLoader = new THREE.STLLoader();
+    // let mesh = new THREE.Object3D();
+    // loader.load("./Test2.stl", function (geometry) {
+    //     let mat = new THREE.MeshLambertMaterial({ color: 0x7777ff });
+    //     mesh = new THREE.Mesh(geometry, mat);
+    //     mesh.scale.set(0.6, 0.6, 0.6);
+    //     scene.add(group);
+    // });
 
     render();
 
@@ -77,3 +85,4 @@ window.addEventListener('resize', function () {
     camera.updateProjectionMatrix();
     renderer.setResize(window.innerWidth, window.innerHeight);
 }, false);
+

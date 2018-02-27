@@ -9,14 +9,23 @@
             margin: 0;
             overflow: hidden;
         }
+
+        .control {
+            color: white;
+            position: absolute;
+            z-index: 1;
+            text-align: center;
+            bottom: 50px;
+            width: 100%;
+        }
     </style>
 </head>
 
 <body>
-    <div id="WebGL">
-
+    <div id="WebGL"></div>
+    <div class="control">
+        <button id="btnReset" class="btn btn-default">Reset</button>
     </div>
-    <button id="btnReset" class="btn btn-default">Reset</button>
 </body>
 
 </html>
@@ -25,3 +34,4 @@
 <script type="text/javascript" src="js/three.js"></script>
 <script type="text/javascript" src="js/OBJLoader.js"></script>
 <script type="text/javascript" src="js/MTLLoader.js"></script>
+<script type="text/javascript" src="js/STLLoader.js"></script>
